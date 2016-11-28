@@ -1,6 +1,9 @@
 # SYNOPSIS
 Respond with `json`, `html`, `text`, or `redirect`. Extend headers easily.
 
+# BUILD STATUS
+[![Build Status](https://travis-ci.org/0x00A/stream-response.svg?branch=master)](https://travis-ci.org/0x00A/stream-response)
+
 # USAGE
 ```js
 const Response = require('stream-response')
