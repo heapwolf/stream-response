@@ -17,6 +17,7 @@ http.createServer((req, res) => {
 
 ```js
 response.html(401, '<h1>Not Allowed</h1>')
+```
 
 ```js
 response.text(418, 'Tea Time!')
