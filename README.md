@@ -23,9 +23,18 @@ response.html(401, '<h1>Not Allowed</h1>')
 response.text(418, 'Tea Time!')
 ```
 
-## REDIRECT
+## ABSOLUTE REDIRECTS
+Defaults to `301`.
+
 ```js
 response.redirect(req, 'https://google.com')
+response.redirect(302, req, 'https://google.com')
+```
+
+## RELATIVE REDIRECTS
+```js
+response.redirect(req, '/login')
+response.redirect(301, req, '/login')
 ```
 
 ## EXTEND HEADERS

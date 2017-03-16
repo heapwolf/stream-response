@@ -1,13 +1,13 @@
 {
   "name": "stream-response",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Respond with json, html, text, etc. or redirect. Extend headers easily.",
   "main": "index.js",
   "dependencies": {
     "json-stringify-safe": "^5.0.1"
   },
   "devDependencies": {
-    "stream-body": "^1.0.2",
+    "stream-body": "^1.0.5",
     "tape": "^4.6.3"
   },
   "scripts": {

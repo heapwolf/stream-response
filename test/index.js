@@ -4,10 +4,18 @@ const body = require('stream-body')
 const Respond = require('../index')
 const QS = require('querystring')
 
-const hostname = 'localhost'
-const port = 3000
-const src = 'http://' + [hostname, port].join(':')
-const get = (p, cb) => http.get(src + p, cb)
+const get = (p, cb) => {
+  const opts = {
+    method: 'GET',
+    path: p,
+    hostname: 'localhost',
+    port: 3000,
+    headers: {
+      'content-type': 'json/application'
+    }
+  }
+  return http.request(opts, cb).end()
+}
 
 test('[passing] setup', assert => {
   const server = http.createServer((req, res) => {
@@ -30,12 +38,12 @@ test('[passing] setup', assert => {
       respond.redirect(req, '/redirected')
     }
 
-    if (req.url === '/redirected') {
+    if (req.url === 'http://localhost:3000/redirected') {
       respond.text(200, 'OK')
     }
   })
 
-  server.listen(port, hostname, () => {
+  server.listen(3000, 'localhost', () => {
     assert.end()
   })
 })
@@ -59,7 +67,7 @@ test('[passing] forms are parsed properly', assert => {
 
 test('[passing] redirect', assert => {
   get('/redirect', res => {
-    assert.equal(res.statusCode, 302)
+    assert.equal(res.statusCode, 301)
     get(res.headers['location'], res => body.parse(res, (err, data) => {
       assert.ok(!err, 'There should not be an error here')
       assert.equal(res.statusCode, 200, 'status should be success')
@@ -76,4 +84,3 @@ test('[passing] teardown', assert => {
   assert.end()
   process.exit(0)
 })
-
