@@ -60,7 +60,7 @@ module.exports = function Response (stream, initialHeaders) {
   }
 
   api.redirect = (...args) => {
-    let statusCode = 301
+    let statusCode = 302
     let location
     let req
 

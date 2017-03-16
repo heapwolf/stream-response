@@ -67,7 +67,7 @@ test('[passing] forms are parsed properly', assert => {
 
 test('[passing] redirect', assert => {
   get('/redirect', res => {
-    assert.equal(res.statusCode, 301)
+    assert.equal(res.statusCode, 302)
     get(res.headers['location'], res => body.parse(res, (err, data) => {
       assert.ok(!err, 'There should not be an error here')
       assert.equal(res.statusCode, 200, 'status should be success')

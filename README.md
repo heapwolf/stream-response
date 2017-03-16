@@ -24,7 +24,7 @@ response.text(418, 'Tea Time!')
 ```
 
 ## ABSOLUTE REDIRECTS
-Defaults to `301`.
+Defaults to `302`.
 
 ```js
 response.redirect(req, 'https://google.com')
