@@ -14,5 +14,6 @@
     "test": "node test/index.js"
   },
   "author": "hij1nx",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "0x00A/stream-response"
 }
