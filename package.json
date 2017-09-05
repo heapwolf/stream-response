@@ -1,6 +1,6 @@
 {
   "name": "stream-response",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Respond with json, html, text, etc. or redirect. Extend headers easily.",
   "main": "index.js",
   "dependencies": {

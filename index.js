@@ -1,8 +1,10 @@
 const stringify = require('json-stringify-safe')
 
 function decorate (s, statusCode, headers) {
+  if (!s) return s
+
   s.statusCode = statusCode
-  Object.keys(headers).map(k => s.setHeader(k, headers[k]))
+  Object.keys(headers).forEach(k => s.setHeader(k, headers[k]))
   return s
 }
 
